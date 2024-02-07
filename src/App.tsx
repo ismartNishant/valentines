@@ -1,13 +1,15 @@
 import { useState } from "react";
 import "./App.css";
-import { FaHeart} from "react-icons/fa6";
+import { FaHeart } from "react-icons/fa6";
 import { GiRose } from "react-icons/gi";
-
+import ConfettiExplosion from 'react-confetti-explosion';
 
 export default function Page() {
   const [noCount, setNoCount] = useState(0);
   const [yesPressed, setYesPressed] = useState(false);
   const yesButtonSize = noCount * 20 + 24;
+  const [isExploding, setIsExploding] = useState(false);
+
 
   const handleNoClick = () => {
     setNoCount(noCount + 1);
@@ -42,27 +44,32 @@ export default function Page() {
         {yesPressed ? (
           <>
             <div className="w-56 rounded-full overflow-hidden h-56 relative">
-             <img src="/giphy.webp" />
+              <img src="/giphy.webp" />
             </div>
 
             <div className="text-container gap-2  flex items-center">
               <p className="text-5xl  font-bold">Ok yay!!!  </p>
-              <FaHeart color="red" className="animate-bounce"/>
+              <FaHeart color="red" className="animate-bounce" />
             </div>
+            {isExploding && <ConfettiExplosion force={0.8}  duration={4000} height={1000} colors={["white","#08a3e6","#B4F8C8","#FE7C6","red","pink","#e60751","#FFAEBC"]}  width={1600} particleCount={450}/>};
           </>
         ) : (
           <>
             <img
               className="w-[260px] h-[250px] rounded-full overflow-hidden"
-              
+
               src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif"
             />
-            <h1 className="text-container flex items-center ">Will you accept my rose <GiRose  color= "#e60751" className="mx-2" />   ?</h1>
+            <h1 className="text-container flex items-center ">Will you accept my rose <GiRose color="#e60751" className="mx-2" />   ?</h1>
             <div className="flex items-center">
               <button
                 className="hover:bg-pink-400  px-8 py-1 me-2 font-bold font-lobster rounded-lg bg-pink-200 border-4 border-pink-400"
                 style={{ fontSize: yesButtonSize }}
-                onClick={() => setYesPressed(true)}
+                onClick={() => {
+                  setYesPressed(true);
+                    setIsExploding(true)
+                }
+                }
               >
                 Yes
               </button>
