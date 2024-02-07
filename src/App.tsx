@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import { FaHeart } from "react-icons/fa6";
+import { FaHeart} from "react-icons/fa6";
+import { GiRose } from "react-icons/gi";
+
 
 export default function Page() {
   const [noCount, setNoCount] = useState(0);
@@ -40,26 +42,25 @@ export default function Page() {
         {yesPressed ? (
           <>
             <div className="w-56 rounded-full overflow-hidden h-56 relative">
-              <iframe src="https://giphy.com/embed/IvWYwE0k0RPp2tHqAl" width="100%" height="100%" style={{ position: "absolute" }} frameBorder="0" className="giphy-embed" allowFullScreen>
-              </iframe>
+             <img src="/giphy.webp" />
             </div>
 
             <div className="text-container gap-2  flex items-center">
               <p className="text-5xl  font-bold">Ok yay!!!  </p>
-              <FaHeart color="red" className="animate-pulse"/>
+              <FaHeart color="red" className="animate-bounce"/>
             </div>
           </>
         ) : (
           <>
             <img
-              className="h-[200px] "
-              style={{ width: "400x", height: "240px" }}
+              className="w-[260px] h-[250px] rounded-full overflow-hidden"
+              
               src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif"
             />
-            <h1 className="text-container">Will you be my Valentine?</h1>
+            <h1 className="text-container flex items-center ">Will you accept my rose <GiRose  color= "#e60751" className="mx-2" />   ?</h1>
             <div className="flex items-center">
               <button
-                className="hover:bg-pink-400 px-8 py-1 me-2 font-bold font-lobster rounded-lg bg-pink-200 border-4 border-pink-400"
+                className="hover:bg-pink-400  px-8 py-1 me-2 font-bold font-lobster rounded-lg bg-pink-200 border-4 border-pink-400"
                 style={{ fontSize: yesButtonSize }}
                 onClick={() => setYesPressed(true)}
               >
