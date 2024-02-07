@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./App.css";
 import { FaHeart } from "react-icons/fa6";
-import { GiRose } from "react-icons/gi";
 import ConfettiExplosion from 'react-confetti-explosion';
 
 export default function Page() {
