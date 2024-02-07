@@ -2,11 +2,12 @@ import { useState } from "react";
 import "./App.css";
 import { FaHeart } from "react-icons/fa6";
 import ConfettiExplosion from 'react-confetti-explosion';
+import { GiRose } from "react-icons/gi";
 
 export default function Page() {
   const [noCount, setNoCount] = useState(0);
   const [yesPressed, setYesPressed] = useState(false);
-  const yesButtonSize = noCount * 20 + 24;
+  const yesButtonSize = noCount * 3 + 15;
   const [isExploding, setIsExploding] = useState(false);
 
 
@@ -47,8 +48,8 @@ export default function Page() {
             </div>
 
             <div className="text-container gap-2  flex items-center">
-              <p className="text-5xl  font-bold">Ok yay!!!  </p>
-              <FaHeart color="red" className="animate-bounce" />
+              <p className="text-xl sm:text-5xl font-bold">Aww Ok yay Happpy Rose Day!!!  </p>
+              <FaHeart size={20} color="red" className="animate-bounce" />
             </div>
             {isExploding && <ConfettiExplosion force={0.8}  duration={4000} height={1000} colors={["white","#08a3e6","#B4F8C8","#FE7C6","red","pink","#e60751","#FFAEBC"]}  width={1600} particleCount={450}/>};
           </>
@@ -59,12 +60,12 @@ export default function Page() {
 
               src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif"
             />
-            {/* <h1 className="text-container flex items-center ">Will you accept my rose <GiRose color="#e60751" className="mx-2" />   ?</h1> */}
-            <h1 className="text-container flex items-center ">Will you be my valentine ?</h1>
+            <h1 className="text-container text-2xl flex items-center ">Will you accept my rose <GiRose color="#e60751" className="mx-2" />   ?</h1>
+            {/* <h1 className="text-container flex items-center ">Will you be my valentine ?</h1> */}
             
             <div className="flex items-center">
               <button
-                className="hover:bg-pink-400  px-8 py-1 me-2 font-bold font-lobster rounded-lg bg-pink-200 border-4 border-pink-400"
+                className="hover:bg-pink-400  px-4 py-1 me-2 font-bold font-lobster rounded-lg bg-pink-200 border-4 border-pink-400"
                 style={{ fontSize: yesButtonSize }}
                 onClick={() => {
                   setYesPressed(true);
@@ -75,7 +76,7 @@ export default function Page() {
                 Yes
               </button>
 
-              <button onClick={handleNoClick} className="text-2xl border-4 px-8 py-[7px] m-0 hover:bg-green-300 rounded-lg font-lobster bg-green-100 border-green-300">
+              <button onClick={handleNoClick} className="text-lg border-4 px-2 py-[2px] m-0 hover:bg-green-300 rounded-lg font-lobster bg-green-100 border-green-300">
                 {noCount === 0 ? "No" : getNoButtonText()}
               </button>
             </div>
