@@ -51,7 +51,7 @@ export default function Page() {
               <p className="text-xl sm:text-5xl font-bold">Aww Ok yay Happpy Rose Day!!!  </p>
               <FaHeart size={20} color="red" className="animate-bounce" />
             </div>
-            {isExploding && <ConfettiExplosion force={0.8}  duration={4000} height={1000} colors={["white","#08a3e6","#B4F8C8","#FE7C6","red","pink","#e60751","#FFAEBC"]}  width={1600} particleCount={450}/>};
+            {isExploding && <ConfettiExplosion force={0.8}  duration={4000} height={1000} colors={["white","#08a3e6","#B4F8C8","#FE7C6","red","pink","#e60751","#FFAEBC"]}  width={1600} particleCount={450}/>}
           </>
         ) : (
           <>
@@ -61,7 +61,7 @@ export default function Page() {
               src="https://gifdb.com/images/high/cute-love-bear-roses-ou7zho5oosxnpo6k.gif"
             />
             <h1 className="text-container text-2xl flex items-center ">Will you accept my rose <GiRose color="#e60751" className="mx-2" />   ?</h1>
-            {/* <h1 className="text-container flex items-center ">Will you be my valentine ?</h1> */}
+          
             
             <div className="flex items-center">
               <button
